@@ -11,10 +11,6 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 
 const Footer = () => {
-  const [loading, setLoading] = useState(true)
-  const [currentTime, setCurrentTime] = useState(new Date())
-  const { theme, setTheme } = useTheme()
-  const [isMoonIcon, setIsMoonIcon] = useState(true)
   const [hover, setHover] = useState(false)
 
   useEffect(() => {
@@ -23,31 +19,6 @@ const Footer = () => {
       once: true,
     })
   }, [])
-
-  useEffect(() => {
-    setTimeout(() => setLoading(false), 3000)
-
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date())
-    }, 1000)
-
-    return () => clearInterval(intervalId)
-  }, [])
-
-  const toggleIcon = () => {
-    setIsMoonIcon(!isMoonIcon)
-    setTheme(isMoonIcon ? "light" : "dark")
-  }
-
-  const formatTime = (date: Date) => {
-    return date.toLocaleTimeString("en-NG", {
-      timeZone: "Africa/Lagos",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: true,
-    })
-  }
 
   return (
     <section
