@@ -5,12 +5,21 @@ import React, { useEffect, useState } from "react"
 import WbSunnyIcon from "@mui/icons-material/WbSunny"
 import Brightness2Icon from "@mui/icons-material/Brightness2"
 import { GoMoon } from "react-icons/go"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const DashboardNav = () => {
   const [loading, setLoading] = useState(true)
   const [currentTime, setCurrentTime] = useState(new Date())
   const { theme, setTheme } = useTheme()
   const [isMoonIcon, setIsMoonIcon] = useState(true)
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: true,
+    })
+  }, [])
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 3000)
@@ -38,7 +47,12 @@ const DashboardNav = () => {
   }
 
   return (
-    <nav className="fixed left-80 right-80 top-0 z-50 py-7 md:block">
+    <nav
+      className="fixed left-80 right-80 top-0 z-50 py-7 md:block"
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      data-aos-delay="500"
+    >
       <div className="flex justify-between">
         <div className="containerbg flex items-center whitespace-nowrap rounded-full px-5 py-3 font-semibold">
           <p className="uppercase">
