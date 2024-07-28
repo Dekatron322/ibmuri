@@ -7,6 +7,8 @@ import { LuLayoutDashboard } from "react-icons/lu"
 import { CgLaptop } from "react-icons/cg"
 import { HiOutlineMail } from "react-icons/hi"
 import { GoCopy } from "react-icons/go"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const Footer = () => {
   const [loading, setLoading] = useState(true)
@@ -14,6 +16,13 @@ const Footer = () => {
   const { theme, setTheme } = useTheme()
   const [isMoonIcon, setIsMoonIcon] = useState(true)
   const [hover, setHover] = useState(false)
+
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      once: true,
+    })
+  }, [])
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 3000)
@@ -41,7 +50,12 @@ const Footer = () => {
   }
 
   return (
-    <section className="fixed bottom-2 left-80 right-80 z-50 py-7 md:block">
+    <section
+      className="fixed bottom-2 left-80 right-80 z-50 py-7 md:block"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+      data-aos-delay="500"
+    >
       <div className="flex h-16 w-full items-center justify-between whitespace-nowrap rounded-full bg-[#292929] px-2 font-semibold">
         <div className="flex items-center gap-2">
           <Image className="rounded-full" src="/avatar.svg" width={50} height={50} alt="avatar" />
