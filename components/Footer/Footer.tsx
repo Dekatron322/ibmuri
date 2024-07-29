@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-import { useTheme } from "next-themes"
 import React, { useEffect, useState } from "react"
 import { FiUser } from "react-icons/fi"
 import { LuLayoutDashboard } from "react-icons/lu"
