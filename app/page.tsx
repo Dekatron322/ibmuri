@@ -6,6 +6,7 @@ import { HiOutlineMail } from "react-icons/hi"
 import { GoCopy } from "react-icons/go"
 import { CgFileDocument } from "react-icons/cg"
 import { BsDownload } from "react-icons/bs"
+import { LuCheckCircle } from "react-icons/lu"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import Link from "next/link"
@@ -13,6 +14,7 @@ import Link from "next/link"
 export default function Dashboard() {
   const [hover, setHover] = useState(false)
   const [cvHover, setCvHover] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     AOS.init({
@@ -20,6 +22,12 @@ export default function Dashboard() {
       once: true,
     })
   }, [])
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("muritalaibrahim097@gmail.com")
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000) // Reset copied state after 2 seconds
+  }
 
   return (
     <section className="paddings h-full w-full">
@@ -74,27 +82,39 @@ export default function Dashboard() {
                 </div>
               </Link>
               <div
-                className="email relative flex cursor-pointer items-center gap-2 rounded-full px-3 py-3 transition-colors duration-500"
+                className={` relative flex w-72 cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-3 transition-colors duration-500 ${
+                  copied ? "email-click" : hover ? "email" : "email"
+                }`}
                 onMouseEnter={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
+                onClick={handleCopy}
               >
-                <HiOutlineMail
-                  className={`email-text text-lg font-semibold transition-transform duration-300 ${
-                    hover ? "-translate-x-full transform opacity-0 " : "opacity-100"
-                  }`}
-                />
-                <p
-                  className={`email-text font-semibold transition-transform duration-300 ${
-                    hover ? "email-text -translate-x-6" : "translate-x-0"
-                  }`}
-                >
-                  muritalaibrahim097@gmail.com
-                </p>
-                <GoCopy
-                  className={`email-text absolute right-2 text-lg font-semibold transition-transform duration-300 ${
-                    hover ? "translate-x-0 transform opacity-100" : "translate-x-full transform opacity-0"
-                  }`}
-                />
+                {copied ? (
+                  <>
+                    <p className="font-semibold text-white">Email Copied!</p>
+                    <LuCheckCircle className="ml-2 text-lg font-semibold text-white" />
+                  </>
+                ) : (
+                  <>
+                    <HiOutlineMail
+                      className={`email-text text-lg font-semibold transition-transform duration-300 ${
+                        hover ? "-translate-x-full transform opacity-0" : "opacity-100"
+                      }`}
+                    />
+                    <p
+                      className={`email-text font-semibold transition-transform duration-300 ${
+                        hover ? "-translate-x-6" : "translate-x-0"
+                      }`}
+                    >
+                      muritalaibrahim097@gmail.com
+                    </p>
+                    <GoCopy
+                      className={`email-text absolute right-2 text-lg font-semibold transition-transform duration-300 ${
+                        hover ? "translate-x-0 transform opacity-100" : "translate-x-full transform opacity-0"
+                      }`}
+                    />
+                  </>
+                )}
               </div>
             </div>
           </div>
