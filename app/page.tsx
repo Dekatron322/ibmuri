@@ -10,6 +10,7 @@ import { LuCheckCircle } from "react-icons/lu"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Dashboard() {
   const [hover, setHover] = useState(false)
@@ -115,6 +116,49 @@ export default function Dashboard() {
                     />
                   </>
                 )}
+              </div>
+            </div>
+            <div className=" mt-20  w-full  ">
+              <div>
+                <h5 className="text-3xl font-bold">Projects</h5>
+                <p className="clash mb-3">Some of my resent work.</p>
+              </div>
+              <div className="mb-40 grid w-full grid-cols-2 gap-6">
+                <div className="rounded-xl border bg-[#f0f0f0]">
+                  <Image
+                    className="h-auto w-full overflow-hidden rounded-t-xl"
+                    src="/Thumbnail.png"
+                    width={400}
+                    height={400}
+                    alt="dekalo"
+                  />
+                  <div className="p-4">
+                    <div className="flex gap-2">
+                      <p className="rounded-full bg-[#e0e0e0] px-2 py-1 text-sm font-medium">2024</p>
+                      <p className="rounded-full bg-[#e0e0e0] px-2 py-1 text-sm font-medium">Web 2</p>
+                      <p className="rounded-full bg-[#e0e0e0] px-2 py-1 text-sm font-medium">Health</p>
+                    </div>
+                    <p className="clash mt-2">Caregivers Hospital</p>
+                    <h5 className="text-2xl font-bold">
+                      A User-centered Electronic Medical Record (EMR) System Integrating health maintenance
+                      organizations (HMOs)
+                    </h5>
+                  </div>
+                </div>
+                <div className="bg-[#f0f0f0]">
+                  <Image
+                    className="h-auto w-full rounded-t-3xl"
+                    src="/Thumbnail.png"
+                    width={400}
+                    height={400}
+                    alt="dekalo"
+                  />
+                  <div className="flex gap-2">
+                    <p>2024</p>
+                    <p>Web 2</p>
+                    <p>Health</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
