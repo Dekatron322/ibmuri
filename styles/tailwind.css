@@ -133,6 +133,14 @@ body {
   color: #ffffff;
 }
 
+.card-bg {
+  background-color: #f0f0f0;
+}
+
+[data-theme="dark"] .card-bg {
+  background-color: #0f0f0f;
+}
+
 [data-theme="dark"] .cv-text {
   color: #0f0f0f;
 }

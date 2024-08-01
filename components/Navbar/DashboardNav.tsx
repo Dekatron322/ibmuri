@@ -52,7 +52,7 @@ const DashboardNav = () => {
       data-aos-duration="1000"
       data-aos-delay="500"
     >
-      <div className="flex w-full max-w-4xl justify-between ">
+      <div className="flex w-full max-w-[800px] justify-between ">
         <div className="containerbg flex w-72 items-center justify-center whitespace-nowrap rounded-full px-5 py-3 text-center font-semibold">
           <p className="uppercase">
             {formatTime(currentTime)} <span className="capitalize">GMT+1, Lagos, Nigeria</span>

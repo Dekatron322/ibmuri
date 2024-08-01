@@ -34,7 +34,7 @@ const Footer = () => {
       data-aos-duration="1000"
       data-aos-delay="500"
     >
-      <div className="flex h-16 w-full max-w-4xl items-center justify-between whitespace-nowrap rounded-full bg-[#292929] px-2 font-semibold">
+      <div className="flex h-16 w-full max-w-[800px] items-center justify-between whitespace-nowrap rounded-full bg-[#292929] px-2 font-semibold">
         <div className="flex items-center gap-2">
           <Image className="rounded-full" src="/avatar.svg" width={50} height={50} alt="avatar" />
           <h5 className="text-2xl text-white">IBMuri</h5>
