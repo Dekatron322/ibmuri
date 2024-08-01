@@ -29,7 +29,7 @@ const Footer = () => {
 
   return (
     <section
-      className="fixed bottom-2 left-80 right-80 z-50 py-7 md:block"
+      className="fixed bottom-2 left-80 right-80 z-50 max-w-[900px] py-7 md:block"
       data-aos="fade-up"
       data-aos-duration="1000"
       data-aos-delay="500"

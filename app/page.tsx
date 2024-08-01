@@ -30,8 +30,8 @@ export default function Dashboard() {
   }
 
   return (
-    <section className="paddings h-full w-full">
-      <div className="flex min-h-screen flex-col">
+    <section className="flex h-full w-full items-center justify-center">
+      <div className="flex min-h-screen max-w-[900px] flex-col">
         <DashboardNav />
         <div className="mt-16 flex flex-grow">
           <div className="w-full gap-6 max-md:flex-col max-md:px-0 md:mb-16">
