@@ -31,7 +31,7 @@ export default function Dashboard() {
   }, [])
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("muritalaibrahim097@gmail.com")
+    navigator.clipboard.writeText("cygnux696@gmail.com")
     setCopied(true)
     setTimeout(() => setCopied(false), 2000) // Reset copied state after 2 seconds
   }
@@ -95,7 +95,7 @@ export default function Dashboard() {
                 </div>
               </Link>
               <div
-                className={` relative flex w-72 cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-3 transition-colors duration-500 ${
+                className={`relative flex w-56 cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-3 transition-colors duration-500 ${
                   copied ? "email-click" : hover ? "email" : "email"
                 }`}
                 onMouseEnter={() => setHover(true)}
@@ -119,7 +119,7 @@ export default function Dashboard() {
                         hover ? "-translate-x-6" : "translate-x-0"
                       }`}
                     >
-                      muritalaibrahim097@gmail.com
+                      cygnux696@gmail.com
                     </p>
                     <GoCopy
                       className={`email-text absolute right-2 text-lg font-semibold transition-transform duration-300 ${
@@ -209,7 +209,7 @@ export default function Dashboard() {
                   </Link>
 
                   <div
-                    className={` relative flex w-72 cursor-pointer items-center justify-center gap-2 rounded-full px-3 py-3 transition-colors duration-500 ${
+                    className={` relative flex w-52 cursor-pointer items-center justify-center gap-2 rounded-full  py-3 transition-colors duration-500 ${
                       copied ? "email-click" : hover ? "email" : "email"
                     }`}
                     onMouseEnter={() => setHover(true)}
@@ -233,7 +233,7 @@ export default function Dashboard() {
                             hover ? "-translate-x-6" : "translate-x-0"
                           }`}
                         >
-                          muritalaibrahim097@gmail.com
+                          cygnux696@gmail.com
                         </p>
                         <GoCopy
                           className={`email-text absolute right-2 text-lg font-semibold transition-transform duration-300 ${

@@ -47,7 +47,7 @@ const DashboardNav = () => {
 
   return (
     <nav
-      className="fixed left-0 right-0 top-0 z-50 flex justify-center py-7"
+      className="z-150 fixed left-0 right-0 top-0 flex justify-center  py-7"
       data-aos="fade-down"
       data-aos-duration="1000"
       data-aos-delay="500"

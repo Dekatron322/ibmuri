@@ -34,27 +34,27 @@ const Footer = () => {
       data-aos-duration="1000"
       data-aos-delay="500"
     >
-      <div className="flex h-16 w-full max-w-[800px] items-center justify-between whitespace-nowrap rounded-full bg-[#292929] px-2 font-semibold">
+      <div className="footer_bg flex h-16 w-full max-w-[800px] items-center justify-between whitespace-nowrap rounded-full px-2 font-semibold">
         <div className="flex items-center gap-2">
           <Image className="rounded-full" src="/avatar.svg" width={50} height={50} alt="avatar" />
-          <h5 className="text-2xl text-white">IBMuri</h5>
+          <h5 className="footer_text text-2xl">IBMuri</h5>
         </div>
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2">
-            <FiUser className="text-lg font-semibold text-white" />
-            <p className="text-white">About</p>
+            <FiUser className="footer_text text-lg font-semibold" />
+            <p className="footer_text">About</p>
           </div>
           <div className="flex items-center gap-2">
-            <LuLayoutDashboard className="text-lg font-semibold text-white" />
-            <p className="text-white">Projects</p>
+            <LuLayoutDashboard className="footer_text text-lg font-semibold" />
+            <p className="footer_text">Projects</p>
           </div>
           <div className="flex items-center gap-2">
-            <CgLaptop className="text-lg font-semibold text-white" />
-            <p className="text-white">Media</p>
+            <CgLaptop className="footer_text text-lg font-semibold" />
+            <p className="footer_text">Media</p>
           </div>
           <div
-            className={`relative flex w-72 cursor-pointer items-center justify-center gap-2 rounded-full py-3 transition-colors duration-500 ${
-              copied ? "bg-green-500" : hover ? "bg-[#3d3d3d]" : "bg-white"
+            className={`relative flex w-56 cursor-pointer items-center justify-center gap-2 rounded-full py-3 transition-colors duration-500 ${
+              copied ? "bg-green-500" : hover ? "email_area__hover" : "email_area"
             }`}
             onMouseEnter={() => setHover(true)}
             onMouseLeave={() => setHover(false)}
@@ -70,17 +70,17 @@ const Footer = () => {
                 <HiOutlineMail
                   className={`text-lg font-semibold transition-transform duration-300 ${
                     hover ? "-translate-x-full transform opacity-0" : "opacity-100"
-                  } text-black`}
+                  } email_area__text`}
                 />
                 <p
                   className={`transition-transform duration-300 ${
-                    hover ? "-translate-x-6 text-white" : "translate-x-0"
-                  } text-black`}
+                    hover ? "email-text -translate-x-6" : "translate-x-0"
+                  } email_area__text`}
                 >
-                  muritalaibrahim097@gmail.com
+                  cygnux696@gmail.com
                 </p>
                 <GoCopy
-                  className={`absolute right-2 text-lg font-semibold text-white transition-transform duration-300 ${
+                  className={`email-text absolute right-2 text-lg font-semibold transition-transform duration-300 ${
                     hover ? "translate-x-0 transform opacity-100" : "translate-x-full transform opacity-0"
                   }`}
                 />
