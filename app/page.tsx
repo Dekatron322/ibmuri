@@ -13,13 +13,14 @@ import "aos/dist/aos.css"
 import Link from "next/link"
 import Image from "next/image"
 import SocialsMedia from "components/Socials/SocialsMedia"
+import ProjectCard from "components/ProjectCards/ProjectCards"
 
 export default function Dashboard() {
   const [hover, setHover] = useState(false)
   const [hoverCall, setHoverCall] = useState(false)
 
   const [cvHover, setCvHover] = useState(false)
-
+  const [hoverCard, setHoverCard] = useState(false)
   const [copied, setCopied] = useState(false)
   const [callCopied, setCallCopied] = useState(false)
 
@@ -130,54 +131,13 @@ export default function Dashboard() {
                 )}
               </div>
             </div>
-            <div className=" mt-20  w-full  ">
+            <div className="mt-20 w-full" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">
               <div>
                 <h5 className="text-3xl font-bold">Projects</h5>
                 <p className="clash mb-3">Some of my recent work.</p>
               </div>
               <div className=" grid w-full grid-cols-2 gap-6">
-                <div className="card-bg rounded-xl border">
-                  <Image
-                    className="h-auto w-full overflow-hidden rounded-t-xl"
-                    src="/Thumbnail.png"
-                    width={400}
-                    height={400}
-                    alt="dekalo"
-                  />
-                  <div className="p-4">
-                    <div className="flex gap-2">
-                      <p className="containerbg rounded-full px-2 py-1 text-sm font-medium">2024</p>
-                      <p className="containerbg rounded-full px-2 py-1 text-sm font-medium">Web 2</p>
-                      <p className="containerbg rounded-full px-2 py-1 text-sm font-medium">Health</p>
-                    </div>
-                    <p className="clash mt-2">Caregivers Hospital</p>
-                    <h5 className="clash text-xl font-bold">
-                      A User-centered Electronic Medical Record (EMR) System Integrating health maintenance
-                      organizations (HMOs)
-                    </h5>
-                  </div>
-                </div>
-                <div className="card-bg rounded-xl border">
-                  <Image
-                    className="h-auto w-full overflow-hidden rounded-t-xl"
-                    src="/Thumbnail.png"
-                    width={400}
-                    height={400}
-                    alt="dekalo"
-                  />
-                  <div className="p-4">
-                    <div className="flex gap-2">
-                      <p className="containerbg rounded-full px-2 py-1 text-sm font-medium">2024</p>
-                      <p className="containerbg rounded-full px-2 py-1 text-sm font-medium">Web 2</p>
-                      <p className="containerbg rounded-full px-2 py-1 text-sm font-medium">Health</p>
-                    </div>
-                    <p className="clash mt-2">Caregivers Hospital</p>
-                    <h5 className="clash text-xl font-bold">
-                      A User-centered Electronic Medical Record (EMR) System Integrating health maintenance
-                      organizations (HMOs)
-                    </h5>
-                  </div>
-                </div>
+                <ProjectCard />
               </div>
               <div className="mt-10 flex flex-col items-center">
                 <h5 className="text-4xl font-bold">Let's work together</h5>
