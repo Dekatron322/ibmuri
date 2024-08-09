@@ -48,15 +48,15 @@ export default function ProjectCard() {
         }`}
       >
         <Link
-          className="relative flex w-full items-center justify-between overflow-hidden rounded-full bg-white p-2 text-black"
+          className="study_case relative flex w-full items-center justify-between overflow-hidden rounded-full p-2 "
           href="#"
           onMouseEnter={() => setJustHover(true)}
           onMouseLeave={() => setJustHover(false)}
         >
-          <p className="relative z-10">Read Case Study</p>
+          <p className=" relative z-10">Read Case Study</p>
           <GoArrowRight className="relative z-10" />
           <span
-            className={`absolute inset-0 transform bg-gradient-to-r from-[#f4b601] to-[#f4b601] ${
+            className={`absolute inset-0 transform bg-gradient-to-r from-[#f4b601] to-[#f4b601]   ${
               justhover ? "translate-x-0" : "-translate-x-full"
             } transition-transform duration-500`}
           />

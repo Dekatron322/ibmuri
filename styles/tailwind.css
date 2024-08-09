@@ -129,6 +129,24 @@ body {
   color: #0f0f0f;
 }
 
+.study_case {
+  background-color: #0f0f0f;
+  color: #ffffff;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+[data-theme="dark"] .study_case {
+  background-color: #ffffff;
+  color: #0f0f0f;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+.study_case:hover {
+  color: #0f0f0f;
+}
+
 .cv-text {
   color: #ffffff;
 }
