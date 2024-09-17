@@ -40,7 +40,7 @@ export default function Dashboard() {
     <section className="mb-40 flex h-full w-full items-center justify-center">
       <div className="flex min-h-screen max-w-[800px] flex-col">
         <DashboardNav />
-        <div className="-z-10 mt-16 flex flex-grow">
+        <div className="mt-16 flex flex-grow">
           <div className="w-full gap-6 max-md:flex-col max-md:px-0 md:mb-16">
             <div className="">
               <motion.h2
