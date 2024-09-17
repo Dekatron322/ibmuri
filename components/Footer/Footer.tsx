@@ -7,19 +7,12 @@ import { CgLaptop } from "react-icons/cg"
 import { HiOutlineMail } from "react-icons/hi"
 import { GoCopy } from "react-icons/go"
 import { LuCheckCircle } from "react-icons/lu"
-import AOS from "aos"
 import "aos/dist/aos.css"
+import { motion } from "framer-motion"
 
 const Footer = () => {
   const [hover, setHover] = useState(false)
   const [copied, setCopied] = useState(false)
-
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: true,
-    })
-  }, [])
 
   const handleCopy = () => {
     navigator.clipboard.writeText("muritalaibrahim097@gmail.com")
@@ -28,11 +21,10 @@ const Footer = () => {
   }
 
   return (
-    <section
-      className="fixed bottom-10 left-0 right-0 z-50 flex justify-center py-4"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      data-aos-delay="500"
+    <motion.section
+      transition={{ ease: "easeOut", duration: 1 }}
+      animate={{ y: -40 }}
+      className="fixed bottom-0 left-0 right-0 z-50 flex justify-center "
     >
       <div className="footer_bg flex h-16 w-full max-w-[800px] items-center justify-between whitespace-nowrap rounded-full px-2 font-semibold">
         <div className="flex items-center gap-2">
@@ -89,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 
