@@ -47,13 +47,13 @@ const DashboardNav = () => {
 
   return (
     <nav
-      className="z-150 fixed left-0 right-0 top-0 flex justify-center  py-7"
+      className="z-150 fixed left-0 right-0 top-0 flex justify-center  pt-7 backdrop-blur"
       data-aos="fade-down"
       data-aos-duration="1000"
       data-aos-delay="500"
     >
-      <div className="flex w-full max-w-[800px] justify-between ">
-        <div className="containerbg flex w-72 items-center justify-center whitespace-nowrap rounded-full px-5 py-3 text-center font-semibold">
+      <div className="z-50 flex w-full max-w-[800px] justify-between backdrop-blur">
+        <div className="containerbg font-semiboldbackdrop-blur flex w-72 items-center justify-center whitespace-nowrap rounded-full px-5 py-3 text-center backdrop-blur">
           <p className="uppercase">
             {formatTime(currentTime)} <span className="capitalize">GMT+1, Lagos, Nigeria</span>
           </p>

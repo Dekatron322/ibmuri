@@ -7,8 +7,8 @@ import { GoCopy } from "react-icons/go"
 import { CgFileDocument } from "react-icons/cg"
 import { BsDownload } from "react-icons/bs"
 import { LuCheckCircle, LuPhoneCall } from "react-icons/lu"
+import { motion } from "framer-motion"
 
-import AOS from "aos"
 import "aos/dist/aos.css"
 import Link from "next/link"
 import Image from "next/image"
@@ -23,13 +23,6 @@ export default function Dashboard() {
   const [hoverCard, setHoverCard] = useState(false)
   const [copied, setCopied] = useState(false)
   const [callCopied, setCallCopied] = useState(false)
-
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: true,
-    })
-  }, [])
 
   const handleCopy = () => {
     navigator.clipboard.writeText("cygnux696@gmail.com")
@@ -47,18 +40,17 @@ export default function Dashboard() {
     <section className="mb-40 flex h-full w-full items-center justify-center">
       <div className="flex min-h-screen max-w-[800px] flex-col">
         <DashboardNav />
-        <div className="mt-16 flex flex-grow">
+        <div className="-z-10 mt-16 flex flex-grow">
           <div className="w-full gap-6 max-md:flex-col max-md:px-0 md:mb-16">
             <div className="">
-              <h5
-                className="clash mt-10 h-full text-[46px] font-bold leading-[60px]"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="500"
+              <motion.h2
+                className="clash mt-4 h-full text-[46px] font-bold leading-[60px]"
+                transition={{ ease: "easeOut", duration: 2 }}
+                animate={{ y: [0, 50, 0] }}
               >
                 I craft human-centered products and designs that convert{" "}
                 <span className="text-[#f4b601]">effectively</span>.{" "}
-              </h5>
+              </motion.h2>
               <p
                 className="clash mt-5 text-lg font-normal"
                 data-aos="fade-up"
