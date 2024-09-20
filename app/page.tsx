@@ -8,8 +8,6 @@ import { CgFileDocument } from "react-icons/cg"
 import { BsDownload } from "react-icons/bs"
 import { LuCheckCircle, LuPhoneCall } from "react-icons/lu"
 import { motion } from "framer-motion"
-
-import "aos/dist/aos.css"
 import Link from "next/link"
 import Image from "next/image"
 import SocialsMedia from "components/Socials/SocialsMedia"
@@ -45,24 +43,30 @@ export default function Dashboard() {
             <div className="">
               <motion.h2
                 className="clash mt-4 h-full text-[46px] font-bold leading-[60px]"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ ease: "easeOut", duration: 2 }}
-                animate={{ y: [0, 50, 0] }}
               >
                 I craft human-centered products and designs that convert{" "}
                 <span className="text-[#f4b601]">effectively</span>.{" "}
               </motion.h2>
-              <p
-                className="clash mt-5 text-lg font-normal"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="750"
+              <motion.p
+                className="clash mt-2 text-lg font-normal"
+                transition={{ ease: "easeIn", duration: 2 }}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
               >
                 Ibrahim Muritala is a multidisciplinary software engineer with a background in physics and electronics
                 and proficiency in frontend, backend, web3, and interaction design, as well as Framer development
                 (no-code).
-              </p>
+              </motion.p>
             </div>
-            <div className="mt-5 flex gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+            <motion.div
+              className="-z-10 mt-5 flex gap-4"
+              transition={{ ease: "easeIn", duration: 2 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
               <Link
                 href="https://drive.google.com/file/d/1_KNKhl8xPXh8wwSbAmQY6ORSSDsV6wnF/view?usp=sharing"
                 target="_blank"
@@ -122,19 +126,19 @@ export default function Dashboard() {
                   </>
                 )}
               </div>
-            </div>
-            <div className="mt-20 w-full" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="500">
+            </motion.div>
+            <div className="mt-20 w-full">
               <div>
                 <h5 className="text-3xl font-bold">Projects</h5>
                 <p className="clash mb-3">Some of my recent work.</p>
               </div>
-              <div className=" grid w-full grid-cols-2 gap-6">
+              <div className=" -z-10 grid w-full grid-cols-2 gap-6">
                 <ProjectCard />
               </div>
               <div className="mt-10 flex flex-col items-center">
                 <h5 className="text-4xl font-bold">Let's work together</h5>
                 <p className="clash my-4">I would love to hear from you, so feel free to reach out</p>
-                <div className="mt-5 flex gap-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+                <div className="mt-5 flex gap-4">
                   <Link
                     href="https://drive.google.com/file/d/1_KNKhl8xPXh8wwSbAmQY6ORSSDsV6wnF/view?usp=sharing"
                     target="_blank"

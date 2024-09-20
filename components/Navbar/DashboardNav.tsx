@@ -4,21 +4,13 @@ import { useTheme } from "next-themes"
 import React, { useEffect, useState } from "react"
 import WbSunnyIcon from "@mui/icons-material/WbSunny"
 import { GoMoon } from "react-icons/go"
-import AOS from "aos"
-import "aos/dist/aos.css"
+import { motion } from "framer-motion"
 
 const DashboardNav = () => {
   const [loading, setLoading] = useState(true)
   const [currentTime, setCurrentTime] = useState(new Date())
   const { theme, setTheme } = useTheme()
-  const [isMoonIcon, setIsMoonIcon] = useState(true)
-
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: true,
-    })
-  }, [])
+  const isDarkMode = theme === "dark"
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 3000)
@@ -30,9 +22,8 @@ const DashboardNav = () => {
     return () => clearInterval(intervalId)
   }, [])
 
-  const toggleIcon = () => {
-    setIsMoonIcon(!isMoonIcon)
-    setTheme(isMoonIcon ? "light" : "dark")
+  const toggleTheme = () => {
+    setTheme(isDarkMode ? "light" : "dark")
   }
 
   const formatTime = (date: Date) => {
@@ -46,11 +37,11 @@ const DashboardNav = () => {
   }
 
   return (
-    <nav
-      className="z-150 fixed left-0 right-0 top-0 flex justify-center  pt-7 backdrop-blur"
-      data-aos="fade-down"
-      data-aos-duration="1000"
-      data-aos-delay="500"
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ease: "easeOut", duration: 1 }}
+      className="z-150 fixed left-0 right-0 top-0 z-20 flex  justify-center pt-7 backdrop-blur"
     >
       <div className="z-50 flex w-full max-w-[800px] justify-between backdrop-blur">
         <div className="containerbg font-semiboldbackdrop-blur flex w-72 items-center justify-center whitespace-nowrap rounded-full px-5 py-3 text-center backdrop-blur">
@@ -67,7 +58,7 @@ const DashboardNav = () => {
 
           <div
             className="containerbg flex cursor-pointer items-center rounded-full p-1 transition duration-300"
-            onClick={toggleIcon}
+            onClick={toggleTheme}
             style={{
               position: "relative",
               width: "80px",
@@ -78,27 +69,27 @@ const DashboardNav = () => {
             <div
               style={{
                 position: "absolute",
-                left: isMoonIcon ? "2px" : "calc(100% - 42px)",
+                right: isDarkMode ? "calc(100% - 42px)" : "2px",
                 width: "36px",
                 height: "36px",
                 borderRadius: "50%",
-                backgroundColor: isMoonIcon ? "#fff" : "#000",
+                backgroundColor: isDarkMode ? "#000" : "#fff",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                transition: "left 0.5s ease",
+                transition: "right 0.5s ease",
               }}
             >
-              {isMoonIcon ? (
-                <WbSunnyIcon style={{ color: "#000", fontSize: "24px" }} />
-              ) : (
+              {isDarkMode ? (
                 <GoMoon style={{ color: "#fff", fontSize: "24px" }} />
+              ) : (
+                <WbSunnyIcon style={{ color: "#000", fontSize: "24px" }} />
               )}
             </div>
           </div>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 
