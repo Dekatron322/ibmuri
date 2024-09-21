@@ -3,11 +3,28 @@ import { useState } from "react"
 import { GoArrowRight } from "react-icons/go"
 import { useRouter } from "next/navigation"
 import { projects } from "utils" // Assuming you have a utils file where the projects array is defined.
+import { motion } from "framer-motion"
 
 export default function ProjectCard() {
   const [hoverIndex, setHoverIndex] = useState(-1)
   const [justHoverIndex, setJustHoverIndex] = useState(-1)
   const router = useRouter()
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay between children
+      },
+    },
+  }
+
+  // Child item animation variants
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  }
 
   return (
     <>

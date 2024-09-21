@@ -34,6 +34,22 @@ export default function Dashboard() {
     setTimeout(() => setCallCopied(false), 2000) // Reset copied state after 2 seconds
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay between children
+      },
+    },
+  }
+
+  // Child item animation variants
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  }
+
   return (
     <section className="mb-40 flex h-full w-full items-center justify-center">
       <div className="flex min-h-screen max-w-[800px] flex-col">
@@ -135,10 +151,20 @@ export default function Dashboard() {
               <div className=" -z-10 grid w-full grid-cols-2 gap-6">
                 <ProjectCard />
               </div>
-              <div className="mt-10 flex flex-col items-center">
-                <h5 className="text-4xl font-bold">Let's work together</h5>
-                <p className="clash my-4">I would love to hear from you, so feel free to reach out</p>
-                <div className="mt-5 flex gap-4">
+              <motion.div
+                className="mt-10 flex flex-col items-center"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={containerVariants}
+              >
+                <motion.h5 className="text-4xl font-bold" variants={itemVariants}>
+                  Let's work together
+                </motion.h5>
+                <motion.p className="clash my-4" variants={itemVariants}>
+                  I would love to hear from you, so feel free to reach out
+                </motion.p>
+                <motion.div className="mt-5 flex gap-4" variants={itemVariants}>
                   <Link
                     href="https://drive.google.com/file/d/1_KNKhl8xPXh8wwSbAmQY6ORSSDsV6wnF/view?usp=sharing"
                     target="_blank"
@@ -234,13 +260,15 @@ export default function Dashboard() {
                       </>
                     )}
                   </div>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
               <SocialsMedia />
 
-              <div className="mt-20">
-                <p className="clash text-center font-semibold">© 2024 Ibrahim P. Muritala, All Rights Reserved </p>
-              </div>
+              <motion.div className="mt-20" variants={itemVariants}>
+                <motion.p variants={itemVariants} className="clash text-center font-semibold">
+                  © 2024 Ibrahim P. Muritala, All Rights Reserved{" "}
+                </motion.p>
+              </motion.div>
             </div>
           </div>
         </div>

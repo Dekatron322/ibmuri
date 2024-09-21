@@ -9,6 +9,7 @@ import { FaTelegram } from "react-icons/fa"
 import { FaTiktok } from "react-icons/fa"
 import { FaGitlab } from "react-icons/fa"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 const SocialsMedia = () => {
   const [gitHover, setGitHover] = useState(false)
@@ -19,9 +20,30 @@ const SocialsMedia = () => {
   const [gitlabHover, setGitLabHover] = useState(false)
   const [tiktikHover, setTiktokHover] = useState(false)
   const [telegramHover, setTelegramHover] = useState(false)
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, // Delay between children
+      },
+    },
+  }
+
+  // Child item animation variants
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  }
   return (
-    <>
-      <div className="mt-20 flex justify-center gap-10">
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={containerVariants}
+    >
+      <motion.div className="mt-20 flex justify-center gap-10" variants={itemVariants}>
         <Link
           href="https://drive.google.com/file/d/1_KNKhl8xPXh8wwSbAmQY6ORSSDsV6wnF/view?usp=sharing"
           target="_blank"
@@ -119,8 +141,8 @@ const SocialsMedia = () => {
             <GoArrowUpRight className="text-[#f4b601]" />
           </div>
         </Link>
-      </div>
-      <div className="mt-4 flex justify-center gap-10">
+      </motion.div>
+      <motion.div className="mt-4 flex justify-center gap-10" variants={itemVariants}>
         <Link
           href="https://drive.google.com/file/d/1_KNKhl8xPXh8wwSbAmQY6ORSSDsV6wnF/view?usp=sharing"
           target="_blank"
@@ -218,8 +240,8 @@ const SocialsMedia = () => {
             <GoArrowUpRight className="text-[#f4b601]" />
           </div>
         </Link>
-      </div>
-    </>
+      </motion.div>
+    </motion.div>
   )
 }
 
